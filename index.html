@@ -1,46 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../d3.min.js"></script>
-</head>
-<body>
-
-<script>
-    // write your d3 code here.. 
-</script>
-</body>
-</html>
-
-<!doctype html>
-<html>
-<head>
     <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
 
-    <p>國民黨馬英九</p>
-    <p>無黨籍王大明</p>
-    <p>民進黨蔡英文</p>
-    <p>時代力量黃國昌</p>
-    <p>無黨籍柯文哲</p>
-    <p>民進黨陳菊</p>
+    <script>
+        d3.csv("/sick.csv", function(data) {
+           console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i].Name);
+                console.log(data[i].Age);
+            }
+        });
+        </script>
 
-<script>
-    d3.selectAll("p").style("color", function(d, i) {
-            var text = this.innerText;
-        
-            if (text.indexOf("國民黨") >= 0) {
-                return "blue";
-            } else if (text.indexOf("民進黨") >= 0) {
-                return "green";
-            }
-else if (text.indexOf("時代力量") >= 0) {
-                return "yellow";
-            }
-else if (text.indexOf("無黨籍") >= 0) {
-                return "orange";
-            }
-    });
-</script>
 </body>
 </html>
